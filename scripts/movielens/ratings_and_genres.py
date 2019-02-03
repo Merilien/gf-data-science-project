@@ -8,7 +8,6 @@ chunks = []
 for chunk in pd.read_csv("C://ws/ml-20m/ratings.csv", chunksize=chunksize, low_memory=False):
     chunks.append(chunk)
 ratings = pd.concat(chunks)
-
 chunks = []
 for chunk in pd.read_csv("C://ws/ml-20m/links.csv", chunksize=chunksize, low_memory=False):
     chunks.append(chunk)
@@ -35,9 +34,11 @@ def search_genres(row):
         if genre not in genre_list:
             genre_list.append(genre)
     return row
+
 genre_list = []
 linked_genres.apply(search_genres, axis="columns")
 for genre in genre_list[:-1]:
     linked_genres[genre] = pd.Series(linked_genres.genres.str.contains(genre), index=linked_genres.index)
 linked_genres.drop("genres", axis=1, inplace=True)
+
 linked_genres.to.csv("movielens_genres.csv")
