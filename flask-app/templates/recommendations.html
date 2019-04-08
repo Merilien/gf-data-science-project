@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class='container-fluid'>
+        <div class="row" id="page">
+            <div class="col-md-6 offset-md-3">
+                <div class="card" id="card">
+                    <div class='row' id='head'>
+                        <div class='col-md-3'>
+                            <img class='img-fluid' id='fox' src='/static/foxy.png'>
+                        </div>
+                        <div class='col-md-9'>
+                            <h1 id='title'>NETFLOX</h1>
+                        </div>
+                    </div>
+                    <div class='row' id='content'>
+                        <div class='col-md-12'>
+                            <p>Choose some movies!</p>
+                            <div id="list">
+                            <ul class='list-group'>
+                            </ul>
+                            </div>
+                            <div class="text-center" id="form">
+                                <form class="form-inline text-center">
+                                <input type="text" id="add" class="form-control" data-provide="typeahead" 
+                                placeholder="Add a movie or series" autocomplete="off">
+                                <button type="submit" id="add-button" class="btn btn-primary">+</button>
+                            </div>
+                            <button id="rec" onclick="window.location.href='/recommendations'">Recommend!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="/static/javascript.js"></script>
+</body>
+
+</html>
